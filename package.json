@@ -1,0 +1,26 @@
+{
+  "name": "autumncodetest",
+  "version": "1.0.0",
+  "description": "*Please read this whole README before starting.*",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/autumn-pham/autumncodetest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/autumn-pham/autumncodetest/issues"
+  },
+  "homepage": "https://github.com/autumn-pham/autumncodetest#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.11.12"
+  }
+}
