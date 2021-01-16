@@ -2,12 +2,6 @@ const express = require('express');
 const Book = require('../models/books.js');
 const books = express.Router();
 
-// NEW
-
-books.get('/new', (req, res)=>{
-    res.render('new.html.ejs');
-});
-
 // EDIT
 
 books.get('/:id/edit', (req, res)=>{

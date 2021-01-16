@@ -4,8 +4,23 @@
     <%- include('partials/head.html.ejs') %>
   </head>
   <body>
-    <div class="container card-container">
+    <div class="container">
       <h1>Autumn's Books</h1>
+      <form action="/books" method="POST">
+        <fieldset>
+          <legend>Add a Book</legend>
+          <label for="title">TITLE</label>
+          <input type="text" name="title" id="title"/><br/>
+          <label for="author">AUTHOR</label>
+          <input type="text" name="author" id="author"/><br/>
+          <label for="img">COVER IMAGE</label>
+          <input type="text" name="img" id="img"/><br/>
+          <label for="factoid">FACT</label>
+          <input type="text" name="factoid" id="factoid"/><br/>
+          <input type="submit" value="SUBMIT" class="add-btn" />
+        </fieldset>
+      </form>
+      <hr/>
       <div class="row row-cols-2">
 
         <% for(let i = 0; i < books.length; i++){ %>
@@ -29,7 +44,6 @@
 
       <% } %>
       </div>
-      <a href="/books/new">Add a book</a>
     </div>
   </body>
 </html>

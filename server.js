@@ -1,4 +1,4 @@
-//Dependencies
+// Dependencies
 
 const express = require('express');
 const methodOverride  = require('method-override');
@@ -9,12 +9,12 @@ require('dotenv').config();
 
 //Port
 
-// Allow use of Heroku's port or own local port, depending on the environment
+// Allow use of Heroku's port or own local port
 const PORT = process.env.PORT || 3000
 
 //Database
 
-// How to connect to the database either via heroku or locally
+// Connection to database
 const MONGODB_URI = process.env.MONGODB_URI
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
@@ -24,13 +24,13 @@ db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
 db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
 db.on('disconnected', () => console.log('mongo disconnected'));
 
-//Middleware
+// Middleware
 
 //use public folder for static assets
 app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
-app.use(express.json());// returns middleware that only parses JSON - may or may not need it depending on your project if you are using 3rd party API you need it
+app.use(express.json());// returns middleware that only parses JSON
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
@@ -44,7 +44,6 @@ app.get('/' , (req, res) => {
   res.redirect('/books');
 });
 
-
-//Listener
+// Listener
 
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
