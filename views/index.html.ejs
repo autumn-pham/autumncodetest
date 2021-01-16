@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('partials/head.html.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Autumn's Books</h1>
+      <% for(let i = 0; i < books.length; i++){ %>
+      <div class="card" style="width: 18rem;">
+        <img src=<%= books[i].img %> class="card-img-top" alt="book cover">
+        <div class="card-body">
+          <p class="card-text">
+            <%= books[i].title %>
+            <%= books[i].author %>
+            <%= books[i].factoid %>
+          </p>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+  </body>
+</html>
