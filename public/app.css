@@ -43,6 +43,10 @@ legend {
   text-align: center;
 }
 
+.card {
+  margin: .5em;
+}
+
 .delete-btn {
   float: right;
 }
