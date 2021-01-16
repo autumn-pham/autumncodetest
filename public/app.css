@@ -45,6 +45,12 @@ legend {
 
 .card {
   margin: .5em;
+  opacity: .3;
+}
+
+.card:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .delete-btn {
@@ -52,6 +58,9 @@ legend {
 }
 
 @media (max-width: 575px) {
+  .banner {
+    height: 300px;
+  }
   h1 {
     font-size: 1.5em;
   }
