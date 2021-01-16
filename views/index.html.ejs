@@ -15,10 +15,13 @@
             <%= books[i].author %>
             <%= books[i].factoid %>
           </p>
+          <form action="/books/<%=books[i]._id%>?_method=DELETE" method="POST" class="delete-btn">
+          <input type="submit" value="DELETE"/>
+      </form>
         </div>
-      </div>
+      </div><br/>
       <% } %>
-
+      <a href="/books/new">Add a book</a>
     </div>
   </body>
 </html>

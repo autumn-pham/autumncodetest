@@ -2,6 +2,48 @@ const express = require('express');
 const Book = require('../models/books.js');
 const books = express.Router();
 
+// NEW
+
+books.get('/new', (req, res)=>{
+    res.render('new.html.ejs');
+});
+
+// EDIT
+
+books.get('/:id/edit', (req, res)=>{
+  Book.findById(req.params.id, (err, foundBook)=>{
+    res.render(
+    	'edit.html.ejs', {
+        book: foundBook,
+      })
+    })
+});
+
+// DELETE
+books.delete('/:id', (req, res) => {
+  Book.findByIdAndRemove(req.params.id, (err, deletedBook) => {
+    res.redirect('/')
+  })
+})
+
+// SHOW
+
+books.get('/:id', (req, res)=>{
+  Book.findById(req.params.id, (error, foundWorkout)=>{
+    res.render('show.html.ejs', {
+      book: foundBook
+    });
+  });
+});
+
+
+// UPDATE
+
+books.put('/:id', (req, res)=>{
+  Book.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedModel)=>{
+    res.redirect('/');
+  });
+});
 
 // CREATE
 
@@ -48,7 +90,7 @@ books.get('/seed', (req, res) => {
         title: "Can't Hurt Me: Master Your Mind and Defy the Odds",
         author: 'David Goggins',
         img: 'https://i.ibb.co/Y2M2nT2/Cant-Hurt-Me.jpg',
-        factoid: 'Goggins believes that most of us only tap into 40% of our potential and capaibilities.'
+        factoid: 'Goggins believes that most of us only tap into 40% of our potential and capabilities.'
       },
       {
         title: 'A Farewell to Arms',
