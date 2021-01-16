@@ -1,9 +1,10 @@
 // Dependencies
 
 const express = require('express');
-const methodOverride  = require('method-override');
-const mongoose = require ('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require ('mongoose');
 const db = mongoose.connection;
 require('dotenv').config();
 
@@ -31,8 +32,7 @@ app.use(express.static('public'));
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON
-//use method override
-app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
+app.use(cors());
 
 // Controllers
 const booksController = require('./controllers/books_controller.js');
