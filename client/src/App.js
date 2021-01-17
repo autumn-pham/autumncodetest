@@ -20,6 +20,7 @@ class App extends React.Component {
         books: response.data,
         currentBook: response.data[0]
       })
+      // console.log(response.data)
     })
     .catch(function(error){
       console.log(error);
@@ -48,10 +49,11 @@ class App extends React.Component {
   }
 
   nextBook = () => {
-   this.setState({
-     currentIndex: this.currentIndex + 1,
+   this.setState(prevState => ({
+     currentIndex: prevState.currentIndex + 1,
      currentBook: this.state.books[this.state.currentIndex]
-   })
+   }))
+   // console.log(this.state.books)
  }
 
   render() {
