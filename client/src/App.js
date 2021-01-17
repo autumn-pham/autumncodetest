@@ -49,10 +49,16 @@ class App extends React.Component {
   }
 
   nextBook = () => {
-   this.setState(prevState => ({
-     currentIndex: prevState.currentIndex + 1,
-     currentBook: this.state.books[this.state.currentIndex]
-   }))
+  if (this.state.currentIndex < this.state.books.length) {
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex + 1,
+      currentBook: this.state.books[this.state.currentIndex]
+    }))
+  } else {
+    this.setState(prevState => ({
+      currentBook: this.state.books[0]
+    }))
+  }
    // console.log(this.state.books)
  }
 
