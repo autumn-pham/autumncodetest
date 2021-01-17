@@ -12,6 +12,7 @@ class Form extends React.Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
+      books: [],
       title: '',
       author: '',
       img: '',
@@ -60,40 +61,44 @@ class Form extends React.Component {
     )
   }
 
-  componentDidMount = () => {
-    axios.get('http://localhost:4000/books/').then(response => {
-      this.setState({
-        books: response.data
-      })
-    })
-  }
+  // componentDidMount = () => {
+  //   axios.get('http://localhost:4000/books/').then(response => {
+  //     this.setState({
+  //       books: response.data
+  //     })
+  //   })
+  // }
   render() {
     return (
       <div className="form">
         <form onSubmit={this.onSubmit}>
           <fieldset>
             <legend>Add a Book</legend>
-            <label for="title">TITLE</label>
+            <label htmlFor="title">TITLE</label>
             <input
               type="text"
+              id="title"
               value={this.state.title}
               onChange={this.onChangeNewTitle}/><br/>
-            <label for="author">AUTHOR</label>
+            <label htmlFor="author">AUTHOR</label>
             <input
               type="text"
+              id="author"
               value={this.state.author}
               onChange={this.onChangeNewAuthor}/><br/>
-            <label for="img">COVER IMAGE</label>
+            <label htmlFor="img">COVER IMAGE</label>
             <input
               type="text"
+              id="img"
               value={this.state.img}
               onChange={this.onChangeNewImg}/><br/>
-            <label for="factoid">FACT</label>
+            <label htmlFor="factoid">FACT</label>
             <input
               type="text"
+              id="factoid"
               value={this.state.factoid}
               onChange={this.onChangeNewFactoid}/><br/>
-            <input type="submit" value="SUBMIT" class="add-btn" />
+            <input type="submit" name="action" value="SUBMIT" className="add-btn" />
           </fieldset>
         </form>
       </div>
