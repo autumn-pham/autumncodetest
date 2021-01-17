@@ -10,7 +10,9 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
+        <hr />
         <Form />
+        <hr />
         <Card />
       </div>
     )
