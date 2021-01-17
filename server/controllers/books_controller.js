@@ -1,7 +1,7 @@
 const express = require('express');
 const Book = require('../models/books.js');
 const books = express.Router();
-const booksSeed = require('../models/books_seed.js');
+const booksSeed = require('../models/seed.js');
 
 // EDIT
 
