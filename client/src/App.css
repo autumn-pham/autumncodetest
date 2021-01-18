@@ -1,0 +1,132 @@
+body {
+  background-color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h3 {
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Lobster', cursive;
+}
+
+h2 {
+  text-align: center;
+}
+
+.banner {
+  background-image: url('https://www.twincities.com/wp-content/uploads/2017/09/books-reading-library.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 450px;
+  text-align: center;
+  opacity: .7;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex1 {
+  padding: 1em;
+  width: 33%;
+}
+
+.flex2 {
+  padding: 3em;
+  width: 66%;
+}
+
+fieldset {
+  margin: .5em;
+  padding: 1em;
+  border: solid;
+}
+
+legend {
+  text-align: center;
+}
+
+.card {
+  margin: .5em;
+  width: 60%;
+  margin: auto;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.delete-btn, .next-button {
+  width: 50%;
+}
+
+.google-books-input {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.google-book, .google-book-img {
+  padding: 1em;
+}
+
+.google-book {
+  width: 50%;
+}
+
+.google-book-img {
+  width: 48%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+
+@media (max-width: 575px) {
+
+  .banner {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    padding: 2em;
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.25em;
+  }
+
+  .card {
+    width: 100%;
+  }
+  .book-container {
+    display: block;
+  }
+
+  .google-book {
+    width: 100%;
+  }
+
+  .google-book-img {
+    width: 100%;
+    text-align: center;
+  }
+}
