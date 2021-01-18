@@ -53,8 +53,14 @@ legend {
   cursor: pointer;
 }
 
-.delete-btn {
-  float: right;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.delete-btn, .next-button {
+  width: 50%;
 }
 
 @media (max-width: 575px) {

@@ -9,8 +9,10 @@ const Card = ({ books, currentBook, onNextBook, onDelete }) => {
           <h4>{currentBook.title}</h4>
           <h5>{currentBook.author}</h5>
           <p className="card-text">{currentBook.factoid}</p>
-          <button className="btn btn-danger" value={currentBook._id} onClick={onDelete} type="submit" name="action">DELETE</button>
-          <button className="btn btn-primary" onClick={onNextBook}>Next</button>
+          <div className="button-container">
+            <button className="btn btn-danger delete-btn" value={currentBook._id} onClick={onDelete} type="submit" name="action">DELETE</button>
+            <button className="btn btn-primary next-btn" onClick={onNextBook}><i class="fas fa-forward"></i></button>
+          </div>
         </div>
     </div>
   )
