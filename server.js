@@ -41,7 +41,7 @@ app.use('/books', booksController);
 // Routes
 
 app.get('/' , (req, res) => {
-  res.send('Books API');
+  res.redirect('/books');
 });
 
 // Listener
